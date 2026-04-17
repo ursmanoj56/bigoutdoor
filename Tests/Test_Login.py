@@ -61,13 +61,13 @@ class TestLogin(BaseTest):
 
     def test_login_button_enable_after_credential(self):
         self.loginpage = LoginPage(self.driver)
-        message=self.loginpage.is_loginButton_is_enable_after_credential("surrendar_bigoutdoor", "Test123")
+        message=self.loginpage.is_loginButton_is_enable_after_credential("")
         assert message is True
 
 
     def test_valid_login(self):
         self.loginpage = LoginPage(self.driver)
-        myorderpage = self.loginpage.login_with_valid_credential("surrendar_bigoutdoor", "Test123")
+        myorderpage = self.loginpage.login_with_valid_credential("")
 
     @pytest.mark.parametrize("username,password",get_data_from_excel(r"C:\Users\HP\PycharmProjects\SS0\TestFiles\OSS2-Login.xlsx",  "LoginTest"))
     def test_invalid_login(self, username, password):
